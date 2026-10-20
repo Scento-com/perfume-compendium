@@ -1,0 +1,42 @@
+{
+  "name": "scento-perfume-compendium",
+  "version": "1.0.0",
+  "description": "Scento Perfume Compendium: the perfume knowledge connector for AI assistants. Perfume portraits, raw materials, houses and Scento's family map, every answer tied to a page on scento.com. No key, no account.",
+  "mcpName": "com.scento/perfume-compendium",
+  "keywords": [
+    "perfume",
+    "fragrance",
+    "mcp",
+    "model-context-protocol",
+    "claude",
+    "chatgpt",
+    "perfume-notes",
+    "scento"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Scento-com/perfume-compendium.git",
+    "directory": "npm"
+  },
+  "bugs": {
+    "url": "https://github.com/Scento-com/perfume-compendium/issues"
+  },
+  "homepage": "https://www.scento.com/developers",
+  "author": "Scento <contact@scento.com>",
+  "license": "MIT",
+  "type": "commonjs",
+  "bin": {
+    "scento-perfume-compendium": "bin/scento-perfume-compendium.js"
+  },
+  "files": [
+    "bin/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node test/e2e.js"
+  }
+}

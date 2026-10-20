@@ -1,0 +1,32 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.scento/perfume-compendium",
+  "title": "Scento Perfume Compendium",
+  "description": "Perfume knowledge for AI assistants: hundreds of designer and niche perfumes, 300+ raw materials and Scento's family map, every answer linked to scento.com. No key.",
+  "version": "1.0.0",
+  "websiteUrl": "https://www.scento.com/developers",
+  "repository": {
+    "url": "https://github.com/Scento-com/perfume-compendium",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://www.scento.com/mcp"
+    }
+  ],
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "scento-perfume-compendium",
+      "version": "1.0.0",
+      "transport": { "type": "stdio" }
+    },
+    {
+      "registryType": "pypi",
+      "identifier": "scento-perfume-compendium",
+      "version": "1.0.0",
+      "transport": { "type": "stdio" }
+    }
+  ]
+}
