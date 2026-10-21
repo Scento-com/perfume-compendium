@@ -1,0 +1,11 @@
+{
+  "name": "scento",
+  "owner": { "name": "Scento", "email": "support@scento.com" },
+  "plugins": [
+    {
+      "name": "scento-perfume-api",
+      "source": "./",
+      "description": "Perfume knowledge for Claude Code: notes, families, similar scents and raw materials, free, no key."
+    }
+  ]
+}

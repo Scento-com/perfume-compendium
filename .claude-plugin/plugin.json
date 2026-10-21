@@ -1,0 +1,11 @@
+{
+  "name": "scento-perfume-api",
+  "version": "1.0.0",
+  "description": "Perfume knowledge for Claude Code: notes, families, similar scents and raw materials for 1,400+ designer and niche perfumes, from Scento's verified perfume database. Free, no key.",
+  "author": { "name": "Scento", "url": "https://www.scento.com" },
+  "homepage": "https://www.scento.com/developers",
+  "repository": "https://github.com/Scento-com/perfume-mcp-server",
+  "license": "MIT",
+  "keywords": ["perfume", "fragrance", "mcp", "perfume-api"],
+  "mcpServers": "./.mcp.json"
+}

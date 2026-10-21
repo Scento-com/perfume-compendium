@@ -1,0 +1,10 @@
+{
+  "name": "scento-perfume-api",
+  "version": "1.0.0",
+  "description": "Scento Perfume API: 1,400+ designer and niche perfumes, 400+ raw materials and Scento's family map inside Gemini CLI. Free, no key.",
+  "mcpServers": {
+    "scento-perfume-api": {
+      "httpUrl": "https://www.scento.com/mcp"
+    }
+  }
+}
