@@ -4,7 +4,7 @@
 
 The perfume knowledge connector for AI assistants, from [Scento](https://www.scento.com), Europe's largest perfume decant website, founded in Paris in 2024.
 
-Ask Claude, ChatGPT, Cursor or any MCP client for the portrait of a perfume, the difference between two you are torn over, the scents built on the same structure, or what a raw material such as ambroxan smells like. It covers hundreds of designer and niche perfumes, 300+ raw materials and Scento's own fragrance-family system, and every answer is tied to a page on scento.com. No key, no account, read-only.
+Ask Claude, ChatGPT, Cursor or any MCP client for the portrait of a perfume, the difference between two you are torn over, the scents built on the same structure, or what a raw material such as ambroxan smells like. It covers 700+ designer and niche perfumes, 400+ raw materials and Scento's own fragrance-family system, and every answer is tied to a page on scento.com. No key, no account, read-only.
 
 **Remote server:** `https://www.scento.com/mcp` (streamable HTTP, no authentication)
 **Docs:** https://www.scento.com/developers
