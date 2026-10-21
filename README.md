@@ -8,6 +8,7 @@ Ask Claude, ChatGPT, Cursor or any MCP client for a perfume's notes and family, 
 
 **Remote server:** `https://www.scento.com/mcp` (streamable HTTP, no authentication)
 **Docs:** https://www.scento.com/developers
+**Claude:** Available in [Claude's connectors directory](https://claude.ai/directory/scento-perfume-compendium).
 
 ## Connect the perfume MCP server
 
