@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "scento-perfume-api": {
+      "url": "https://www.scento.com/mcp"
+    }
+  }
+}

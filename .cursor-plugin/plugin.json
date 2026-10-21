@@ -1,0 +1,13 @@
+{
+  "name": "scento-perfume-api",
+  "displayName": "Scento Perfume API",
+  "version": "1.0.0",
+  "description": "Perfume knowledge inside Cursor: notes, families, similar scents and raw materials for 1,400+ designer and niche perfumes. Free, no key.",
+  "author": { "name": "Scento", "email": "support@scento.com" },
+  "homepage": "https://www.scento.com/developers",
+  "repository": "https://github.com/Scento-com/perfume-mcp-server",
+  "license": "MIT",
+  "keywords": ["perfume", "fragrance", "mcp", "perfume-api"],
+  "logo": "https://www.scento.com/images/favicons/android-icon-192x192.png",
+  "mcpServers": "mcp.json"
+}
