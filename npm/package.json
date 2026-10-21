@@ -1,16 +1,25 @@
 {
   "name": "scento-perfume-compendium",
-  "version": "1.0.0",
-  "description": "Scento Perfume Compendium: the perfume knowledge connector for AI assistants. Perfume portraits, raw materials, houses and Scento's family map, every answer tied to a page on scento.com. No key, no account.",
+  "version": "1.0.1",
+  "description": "Free perfume & fragrance API and MCP server for AI assistants: notes, scent families, similar perfumes, raw materials and houses for 700+ perfumes, each linked to scento.com. No key.",
   "mcpName": "com.scento/perfume-compendium",
   "keywords": [
     "perfume",
     "fragrance",
+    "cologne",
+    "scent",
+    "eau-de-parfum",
+    "perfume-notes",
+    "perfume-api",
+    "fragrance-api",
+    "perfume-database",
+    "perfume-mcp",
     "mcp",
+    "mcp-server",
     "model-context-protocol",
     "claude",
     "chatgpt",
-    "perfume-notes",
+    "niche-perfume",
     "scento"
   ],
   "repository": {

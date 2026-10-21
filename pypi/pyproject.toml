@@ -4,15 +4,16 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "scento-perfume-compendium"
-version = "1.0.0"
-description = "Scento Perfume Compendium: the perfume knowledge connector for AI assistants. Perfume portraits, raw materials, houses and Scento's family map, every answer tied to a page on scento.com. No key, no account."
+version = "1.0.1"
+description = "Free perfume & fragrance API and MCP server for AI assistants: notes, scent families, similar perfumes, raw materials and houses for 700+ perfumes, each linked to scento.com. No key."
 readme = "README.md"
 requires-python = ">=3.9"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [{ name = "Scento", email = "contact@scento.com" }]
-keywords = ["perfume", "fragrance", "mcp", "model-context-protocol", "claude", "chatgpt", "perfume-notes", "scento"]
+keywords = ["perfume", "fragrance", "cologne", "scent", "eau-de-parfum", "perfume-notes", "perfume-api", "fragrance-api", "perfume-database", "perfume-mcp", "mcp", "mcp-server", "model-context-protocol", "claude", "chatgpt", "niche-perfume", "scento"]
 classifiers = [
+  "Intended Audience :: Developers",
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3 :: Only",
   "Operating System :: OS Independent",

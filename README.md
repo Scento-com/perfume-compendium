@@ -1,15 +1,15 @@
-# Scento Perfume Compendium
+# Scento Perfume Compendium: Perfume API, Fragrance API and Perfume MCP Server
 
 <!-- mcp-name: com.scento/perfume-compendium -->
 
-The perfume knowledge connector for AI assistants, from [Scento](https://www.scento.com), Europe's largest perfume decant website, founded in Paris in 2024.
+A free perfume and fragrance API and MCP server for AI assistants, from [Scento](https://www.scento.com), a perfume decant house founded in Paris in 2024.
 
-Ask Claude, ChatGPT, Cursor or any MCP client for the portrait of a perfume, the difference between two you are torn over, the scents built on the same structure, or what a raw material such as ambroxan smells like. It covers 700+ designer and niche perfumes, 400+ raw materials and Scento's own fragrance-family system, and every answer is tied to a page on scento.com. No key, no account, read-only.
+Ask Claude, ChatGPT, Cursor or any MCP client for a perfume's notes and family, the difference between two you are torn over, similar scents built on the same structure, or what a raw material such as ambroxan smells like. It covers 700+ designer and niche perfumes, 400+ raw materials, 120+ houses and Scento's own fragrance-family system, and every answer is tied to a page on scento.com. No key, no account, read-only.
 
 **Remote server:** `https://www.scento.com/mcp` (streamable HTTP, no authentication)
 **Docs:** https://www.scento.com/developers
 
-## Connect
+## Connect the perfume MCP server
 
 | Client | How |
 |---|---|
@@ -28,7 +28,7 @@ uvx scento-perfume-compendium        # Python 3.9+
 
 Both accept `--endpoint <url>` (or `SCENTO_COMPENDIUM_ENDPOINT`).
 
-## The twelve tools
+## Twelve perfume and fragrance tools
 
 | Tool | What it does |
 |---|---|
@@ -47,9 +47,9 @@ Both accept `--endpoint <url>` (or `SCENTO_COMPENDIUM_ENDPOINT`).
 
 Pass `lang` (de, fr, es, it, ro, el, hu, cs, pl) to receive scento.com links in that language.
 
-## REST
+## Fragrance API (REST)
 
-The same answers are available over plain HTTP.
+The same answers are available as a perfume API over plain HTTP.
 
 - API base: https://www.scento.com/api/compendium/v1
 - OpenAPI: https://www.scento.com/api/compendium/v1/openapi.json
