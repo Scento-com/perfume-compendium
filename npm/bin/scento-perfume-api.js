@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
-// Stdio-to-remote bridge for the Scento Perfume Compendium MCP server.
+// Stdio-to-remote bridge for the Scento Perfume API MCP server.
 // Reads one JSON-RPC message per line on stdin, forwards it to the remote
 // streamable-HTTP endpoint and prints each reply as one line on stdout.
 
@@ -13,7 +13,7 @@ const DEFAULT_PROTOCOL = '2025-06-18';
 const REQUEST_TIMEOUT_MS = 60000;
 
 function parseArgs(argv) {
-  const out = { endpoint: process.env.SCENTO_COMPENDIUM_ENDPOINT || DEFAULT_ENDPOINT };
+  const out = { endpoint: process.env.SCENTO_PERFUME_API_ENDPOINT || process.env.SCENTO_COMPENDIUM_ENDPOINT || DEFAULT_ENDPOINT };
   for (let i = 0; i < argv.length; i += 1) {
     const a = argv[i];
     if (a === '--endpoint') out.endpoint = argv[++i];
@@ -21,7 +21,7 @@ function parseArgs(argv) {
     else if (a === '--help' || a === '-h') out.help = true;
     else if (a === '--version' || a === '-v') out.version = true;
     else {
-      process.stderr.write(`scento-perfume-compendium: unknown option ${a}\n`);
+      process.stderr.write(`scento-perfume-api: unknown option ${a}\n`);
       process.exit(2);
     }
   }
@@ -32,9 +32,9 @@ const opts = parseArgs(process.argv.slice(2));
 
 if (opts.help) {
   process.stdout.write(
-    `scento-perfume-compendium ${pkg.version}\n` +
-      'Local stdio bridge to the Scento Perfume Compendium MCP server.\n\n' +
-      'Usage: npx -y scento-perfume-compendium [--endpoint <url>]\n\n' +
+    `scento-perfume-api ${pkg.version}\n` +
+      'Local stdio bridge to the Scento Perfume API MCP server.\n\n' +
+      'Usage: npx -y scento-perfume-api [--endpoint <url>]\n\n' +
       `  --endpoint <url>  remote MCP endpoint (default ${DEFAULT_ENDPOINT})\n` +
       '  -v, --version     print the version\n' +
       '  -h, --help        print this help\n\n' +
@@ -51,7 +51,7 @@ let endpoint;
 try {
   endpoint = new URL(opts.endpoint).toString();
 } catch {
-  process.stderr.write(`scento-perfume-compendium: invalid endpoint "${opts.endpoint}"\n`);
+  process.stderr.write(`scento-perfume-api: invalid endpoint "${opts.endpoint}"\n`);
   process.exit(2);
 }
 
@@ -104,7 +104,7 @@ async function forward(line) {
   const headers = {
     'Content-Type': 'application/json',
     Accept: 'application/json, text/event-stream',
-    'User-Agent': `scento-perfume-compendium/${pkg.version} (node)`,
+    'User-Agent': `scento-perfume-api/${pkg.version} (node)`,
   };
   const version = isInit ? msg.params && msg.params.protocolVersion : protocolVersion;
   if (version) headers['MCP-Protocol-Version'] = version;
@@ -123,7 +123,7 @@ async function forward(line) {
   } catch (err) {
     const why = err && err.name === 'TimeoutError' ? 'request timed out' : (err && err.message) || String(err);
     if (id !== undefined) failure(id, -32603, `Could not reach ${endpoint}: ${why}`);
-    else process.stderr.write(`scento-perfume-compendium: ${why}\n`);
+    else process.stderr.write(`scento-perfume-api: ${why}\n`);
     return;
   }
 
@@ -136,7 +136,7 @@ async function forward(line) {
     const detail = body.trim().slice(0, 300);
     const message = `Remote server answered HTTP ${res.status}${detail ? `: ${detail}` : ''}`;
     if (id !== undefined) failure(id, -32603, message);
-    else process.stderr.write(`scento-perfume-compendium: ${message}\n`);
+    else process.stderr.write(`scento-perfume-api: ${message}\n`);
     return;
   }
 
@@ -159,7 +159,7 @@ const rl = readline.createInterface({ input: process.stdin, crlfDelay: Infinity 
 rl.on('line', (line) => {
   if (!line.trim()) return;
   const job = forward(line).catch((err) => {
-    process.stderr.write(`scento-perfume-compendium: ${(err && err.message) || err}\n`);
+    process.stderr.write(`scento-perfume-api: ${(err && err.message) || err}\n`);
   });
   inflight.add(job);
   job.finally(() => inflight.delete(job));

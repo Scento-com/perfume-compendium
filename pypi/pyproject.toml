@@ -3,17 +3,16 @@ requires = ["setuptools>=64"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "scento-perfume-compendium"
-version = "1.0.1"
-description = "Free perfume & fragrance API and MCP server for AI assistants: notes, scent families, similar perfumes, raw materials and houses for 700+ perfumes, each linked to scento.com. No key."
+name = "scento-perfume-api"
+version = "1.0.0"
+description = "Scento Perfume API: a free perfume and fragrance API and MCP server over Scento's verified perfume database. Perfume portraits, notes, raw materials, houses and families, every answer tied to a page on scento.com. No key, no account."
 readme = "README.md"
 requires-python = ">=3.9"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [{ name = "Scento", email = "contact@scento.com" }]
-keywords = ["perfume", "fragrance", "cologne", "scent", "eau-de-parfum", "perfume-notes", "perfume-api", "fragrance-api", "perfume-database", "perfume-mcp", "mcp", "mcp-server", "model-context-protocol", "claude", "chatgpt", "niche-perfume", "scento"]
+keywords = ["perfume api", "fragrance api", "perfume database", "perfume mcp", "mcp server", "mcp", "model-context-protocol", "perfume", "fragrance", "perfume-notes", "claude", "chatgpt", "scento"]
 classifiers = [
-  "Intended Audience :: Developers",
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3 :: Only",
   "Operating System :: OS Independent",
@@ -25,11 +24,11 @@ dependencies = []
 Homepage = "https://www.scento.com/developers"
 Documentation = "https://www.scento.com/developers"
 Website = "https://www.scento.com"
-Repository = "https://github.com/Scento-com/perfume-compendium"
-Issues = "https://github.com/Scento-com/perfume-compendium/issues"
+Repository = "https://github.com/Scento-com/perfume-mcp-server"
+Issues = "https://github.com/Scento-com/perfume-mcp-server/issues"
 
 [project.scripts]
-scento-perfume-compendium = "scento_perfume_compendium.proxy:main"
+scento-perfume-api = "scento_perfume_api.proxy:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

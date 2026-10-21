@@ -8,7 +8,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ENDPOINT = (sys.argv[1] if len(sys.argv) > 1 else os.environ.get("SCENTO_TEST_ENDPOINT")) or "https://www.scento.com/mcp"
 # SCENTO_TEST_CMD lets the same test run against an installed console script
-CMD = os.environ.get("SCENTO_TEST_CMD", "").split() or [sys.executable, "-m", "scento_perfume_compendium"]
+CMD = os.environ.get("SCENTO_TEST_CMD", "").split() or [sys.executable, "-m", "scento_perfume_api"]
 ENV = dict(os.environ, PYTHONPATH=os.path.join(HERE, "..", "src"))
 
 
@@ -28,7 +28,7 @@ replies, err = session(["--endpoint", ENDPOINT], [
 ])
 by_id = {r["id"]: r for r in replies}
 assert len(replies) == 3, "expected 3 replies (notification silent), got %d; stderr: %s" % (len(replies), err)
-assert by_id[1]["result"]["serverInfo"]["name"] == "scento-perfume-compendium"
+assert by_id[1]["result"]["serverInfo"]["name"] == "scento-perfume-api"
 assert len(by_id[2]["result"]["tools"]) == 12, "tools/list must return 12 tools"
 call = by_id[3]["result"]
 assert call["content"] and not call.get("isError"), "tools/call failed"

@@ -5,7 +5,7 @@ const { spawn } = require('node:child_process');
 const path = require('node:path');
 const assert = require('node:assert');
 
-const bin = process.env.SCENTO_TEST_BIN || path.join(__dirname, '..', 'bin', 'scento-perfume-compendium.js');
+const bin = process.env.SCENTO_TEST_BIN || path.join(__dirname, '..', 'bin', 'scento-perfume-api.js');
 const endpoint = process.argv[2] || process.env.SCENTO_TEST_ENDPOINT || 'https://www.scento.com/mcp';
 
 function session(args, lines, rawLines = []) {
@@ -32,7 +32,7 @@ function session(args, lines, rawLines = []) {
   ]);
   const byId = Object.fromEntries(replies.map((r) => [r.id, r]));
   assert.strictEqual(replies.length, 3, `expected 3 replies (notification silent), got ${replies.length}; stderr: ${err}`);
-  assert.strictEqual(byId[1].result.serverInfo.name, 'scento-perfume-compendium');
+  assert.strictEqual(byId[1].result.serverInfo.name, 'scento-perfume-api');
   assert.strictEqual(byId[2].result.tools.length, 12, 'tools/list must return 12 tools');
   const call = byId[3].result;
   assert.ok(call && Array.isArray(call.content) && call.content.length > 0, 'tools/call returned content');

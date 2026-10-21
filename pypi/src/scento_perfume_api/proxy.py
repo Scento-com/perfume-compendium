@@ -1,4 +1,4 @@
-"""Stdio-to-remote bridge for the Scento Perfume Compendium MCP server.
+"""Stdio-to-remote bridge for the Scento Perfume API MCP server.
 
 Reads one JSON-RPC message per line on stdin, forwards it to the remote
 streamable-HTTP endpoint and prints each reply as one line on stdout.
@@ -35,7 +35,7 @@ def _failure(msg_id, code, message):
 
 
 def _warn(text):
-    sys.stderr.write("scento-perfume-compendium: %s\n" % text)
+    sys.stderr.write("scento-perfume-api: %s\n" % text)
     sys.stderr.flush()
 
 
@@ -82,7 +82,7 @@ def forward(endpoint, line):
     headers = {
         "Content-Type": "application/json",
         "Accept": "application/json, text/event-stream",
-        "User-Agent": "scento-perfume-compendium/%s (python)" % __version__,
+        "User-Agent": "scento-perfume-api/%s (python)" % __version__,
     }
     if isinstance(msg, dict) and msg.get("method") == "initialize":
         version = (msg.get("params") or {}).get("protocolVersion")
@@ -150,12 +150,12 @@ def _close_session(endpoint):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(
-        prog="scento-perfume-compendium",
-        description="Local stdio bridge to the Scento Perfume Compendium MCP server. More: https://www.scento.com/developers",
+        prog="scento-perfume-api",
+        description="Local stdio bridge to the Scento Perfume API MCP server. More: https://www.scento.com/developers",
     )
     parser.add_argument(
         "--endpoint",
-        default=os.environ.get("SCENTO_COMPENDIUM_ENDPOINT", DEFAULT_ENDPOINT),
+        default=os.environ.get("SCENTO_PERFUME_API_ENDPOINT") or os.environ.get("SCENTO_COMPENDIUM_ENDPOINT") or DEFAULT_ENDPOINT,
         help="remote MCP endpoint (default: %s)" % DEFAULT_ENDPOINT,
     )
     parser.add_argument("-v", "--version", action="version", version=__version__)
